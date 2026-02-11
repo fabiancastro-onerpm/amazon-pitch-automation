@@ -143,7 +143,7 @@ def parse_release_data(text):
     """
     
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
         response = model.generate_content(prompt)
         json_text = clean_json_response(response.text)
         data = json.loads(json_text)
