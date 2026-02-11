@@ -104,6 +104,15 @@ def apply_business_logic(data):
 
     return data
 
+# --- Main App Logic ---
+
+# 1. Input Section
+st.subheader("1. Paste Release Data")
+raw_text = st.text_area("Paste unstructured text here:", height=200)
+
+if "parsed_data" not in st.session_state:
+    st.session_state.parsed_data = {}
+
 def parse_release_data(text):
     """
     Parses unstructured text using Gemini to extract release information.
